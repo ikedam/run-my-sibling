@@ -1,10 +1,8 @@
-name: Release ikedam/gtokenserver
+name: Release ikedam/runsibling
 on:
   push:
     tags:
       - v*
-env:
-  DOCKERHUB_REPOSITORY: ikedam/gtokenserver
 jobs:
   release-github:
     name: Release to Github
