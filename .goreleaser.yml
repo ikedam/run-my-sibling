@@ -1,0 +1,23 @@
+before:
+  hooks:
+    - go mod download
+builds:
+  - goos:
+      - windows
+    env:
+      - CGO_ENABLED=0
+    main: .
+archives:
+  - format: binary
+    replacements:
+      windows: Windows
+checksum:
+  name_template: checksums.txt
+snapshot:
+  name_template: '{{ .Tag }}-next'
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
